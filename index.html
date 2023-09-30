@@ -3,7 +3,33 @@
   Open your Chrome dev tools to see console output and trigger the debugger to
   catch.
 </p>
+def mostPointsScored(players):
+max_points = 0
+max_player = ""
+for player in players:
+    if player["points"] > max_points:
+        max_points = player["points"]
+        max_player = player["name"]
+return max_player
 
+def winningTeam(teams):
+max_points = 0
+winning_team = ""
+for team in teams:
+    total_points = sum(player["points"] for player in team["players"])
+    if total_points > max_points:
+        max_points = total_points
+        winning_team = team["name"]
+return winning_team
+
+def playerWithLongestName(players):
+max_length = 0
+max_player = ""
+for player in players:
+    if len(player["name"]) > max_length:
+        max_length = len(player["name"])
+        max_player = player["name"]
+return max_player
 <script src="./src/00-objectball.js"></script>
 <script src="./src/01-simple-debug.js"></script>
 <!-- <script src="./src/02-advanced-debug.js"></script> -->
